@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="normalize.css">
     <link rel="stylesheet" href="style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <script src="main.js" defer></script>
     <title>YouTube</title>
 </head>
@@ -30,11 +31,14 @@
         </div>
     </nav>
 
-    <!-- Main content structure -->
+    <!--* Main content structure -->
     <section>
+
+        <!--* Structure for the sidebar  -->
         <div class="sideBar">
+            <!--* Structure for shortcuts at sidebar -->
             <div class="shortcutsIcons">
-                <a href=""><img src="images/home.png" alt="homeIcon"><p>Home</p></a>
+                <a href=""><i class='bx bx-home-alt' style='color:#7c7878'></i><p>Home</p></a>
                 <a href=""><img src="images/explore.png" alt="exploreIcon"><p>Explore</p></a>
                 <a href=""><img src="images/subscriprion.png" alt="subscriprionIcon"><p>Subscription</p></a>
                 <a href=""><img src="images/library.png" alt="libraryIcon"><p>Library</p></a>
@@ -42,10 +46,17 @@
                 <a href=""><img src="images/playlist.png" alt="homeIcon"><p>Playlist</p></a>
                 <a href=""><img src="images/messages.png" alt="homeIcon"><p>Messages</p></a>
                 <a href=""><img src="images/show-more.png" alt="showMoreIcon"><p>Show More</p></a>
+                <hr>
             </div>
-        
-            <div>
-
+            
+            <!--* Structure for subscribed channels  -->
+            <div class="subscribedChanels">
+                <h3>SUBSCRIBED</h3>
+                <a href=""><img src="images/Jack.png" alt="showMoreIcon"><p>Joker</p></a>
+                <a href=""><img src="images/simon.png" alt="showMoreIcon"><p>Maradona</p></a>
+                <a href=""><img src="images/tom.png" alt="showMoreIcon"><p>Tom Cruise</p></a>
+                <a href=""><img src="images/megan.png" alt="showMoreIcon"><p>Megan Fox</p></a>
+                <a href=""><img src="images/cameron.png" alt="showMoreIcon"><p>Cameron Diaz</p></a>   
             </div>
         </div>
     </section>
