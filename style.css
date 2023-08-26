@@ -25,7 +25,7 @@ nav{
     width: 100vw;
     box-shadow: 0 0 1vw rgba(0, 0, 0, 0.2);
     background-color: #fff;
-    position: fixed;
+    position: sticky;
     top: 0;
     z-index: 1;
 }
@@ -74,4 +74,4 @@ nav{
     margin-right: 0;
 }
 
-
+/**  Sidebar Styles */
