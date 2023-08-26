@@ -1,4 +1,6 @@
 *{
+    margin: 0;
+    padding: 0;
     font-family: 'poppins', sans-serif;
     box-sizing: border-box;
 }
@@ -20,7 +22,7 @@ img{
 }
 
 nav{
-    padding: 2vw 2vw;
+    padding: 1vw 2vw;
     justify-content: space-between;
     width: 100vw;
     box-shadow: 0 0 1vw rgba(0, 0, 0, 0.2);
@@ -75,3 +77,66 @@ nav{
 }
 
 /**  Sidebar Styles */
+
+.sideBar{
+    width: 15vw;
+    height: 100vh;
+    background-color: #fff;
+    position: fixed;
+    top: 0;
+    padding-left: 1.5vw;
+    padding-top: 7vw;
+}
+/** Styles for the shortcuts section in the sidebar */
+.shortcutsIcons a{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    width: fit-content;
+    margin-bottom: 1.2vw;
+}
+
+.bx{
+    font-size: 2vw;
+    margin-right: 1vw;
+}
+
+.shortcutsIcons a img{
+    width: 2vw;
+    margin-right: 1vw;
+}
+
+
+.shortcutsIcons a:hover{
+    color:  #c4302b;
+    transition: color .3s ease, color .3s ease;
+}
+
+.sideBar hr{
+    border: 0;
+    height: 0.1vw;
+    width: 12vw;
+    background-image: linear-gradient(to right, rgba(0,0,0,0), #ccc, rgba(0,0,0,0) );
+}
+
+/** Styles for the subscribed channels */
+.subscribedChanels h3{
+    font-size: 1.2vw;
+    margin: 1vw 0;
+    color: #5a5a5a;
+}
+
+.subscribedChanels a{
+    display: flex;
+    flex-wrap: wrap ;
+    align-items: center;
+    column-gap: 1vw;
+    margin-bottom: 1.2vw;
+    width: fit-content;
+}
+
+.subscribedChanels img{
+    width: 2.1vw;
+    border-radius: 50vw;
+    shad
+}
