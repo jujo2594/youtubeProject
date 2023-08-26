@@ -12,7 +12,7 @@ img{
     cursor: pointer;
 }
 
-/** Estilos para el Navabar*/
+/** Styles for the Navabar*/
 
 .flexNavBar{
     display: flex;
@@ -30,6 +30,40 @@ nav{
     z-index: 1;
 }
 
+/** Styles for the menu-Icon and the YouTube logo */
+.navSection1 .menu{
+    width: 2VW;
+    margin-right: 2VW;
+}
+
+.navSection1 .youtubeLogo{
+    width: 10vw;
+}
+
+/** Styles for the search bar, search icon and the mic Icon */
+.navSection2 .micIcon{
+    width: 1.3vw;
+}
+
+.navSection2 .searchBox{
+    border: 1px solid gray;
+    border-radius: 2vw;
+    padding: 0.5vw 1vw;
+    margin-right: 2vw;
+}
+
+.navSection2 .searchBox input{
+    width: 25vw;
+    border: 0;
+    outline: 0;
+    background-color: transparent;
+}
+
+.navSection2 .searchBox img{
+    width: 1.1vw;
+}
+
+/** Styes for user icon, notificatios icon, upload icon and more */
 .navSection3 img{
     width: 2vw;
     margin-right: 1vw;
