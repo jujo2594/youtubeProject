@@ -156,3 +156,18 @@ nav{
     width: 3vw;
     margin-bottom: 1.5vw;
 }
+
+/** Styles for the main content */
+
+.mainContent{
+    padding-left: 17vw;
+    padding-top: 2vw;
+    padding-right: 2vw;
+    padding-bottom: 2vw;
+}
+
+.bannerContainer img{
+    width: 81vw;
+    border-radius: 2vw;
+}
+
