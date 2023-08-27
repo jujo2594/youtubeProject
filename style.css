@@ -188,7 +188,7 @@ nav{
 
 /** Styles for the banner image */
 .bannerContainer img{
-    width: 81vw;
+    width: 80vw;
     border-radius: 2vw;
 }
 
@@ -202,7 +202,7 @@ nav{
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
     column-gap: 1vw;
-    grid-template-rows: 17vw;
+    row-gap: 1vw;
     margin-top: 1vw;
 }
 
@@ -233,3 +233,33 @@ nav{
     font-weight: bold;
 }
 
+/** MediaQuerys for tablets (800px - 1280px)*/
+
+@media (min-width:800px) and (max-width:1280px){
+    .sideBar{
+        display: none;
+    }
+
+    .menu{
+        display: none;
+    }
+
+    .mainContent{
+        padding-left: 2vw;
+        padding-right: 2vw;
+    }
+    .bannerContainer img{
+        width: 96vw;
+    }
+
+    .profilePicture{
+        width: 3vw;
+    }
+    .videoInfo{
+        font-size: 1vw;
+    }
+    
+    .videoInfo a{
+        font-size: 1.2vw;
+    }
+}
