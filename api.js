@@ -14,7 +14,11 @@ const obtenerBanner = async() =>{
 		let petition = await fetch(url,options);
 		let response = await petition.json();
 		console.log(response);
-		console.log(response.banner.desktop[0].url)
+		let creativeCodeBanner = response.banner.desktop[0].url;
+		let selection = document.querySelector('.bannerContainer');
+		selection.insertAdjacentHTML("beforeend", /* HTML*/ `
+			<img src="${creativeCodeBanner}" alt="banner">
+		`)
 	}
 	catch(error){
 		console.error('Ocurrio un error', error);
