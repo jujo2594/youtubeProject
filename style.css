@@ -3,7 +3,6 @@
     padding: 0;
     font-family: 'poppins', sans-serif;
     box-sizing: border-box;
-    overflow-x: auto;
 }
 
 a{
@@ -255,13 +254,30 @@ nav{
 }
 
 .rigth-sidebar{
-    flex-basis: 30vw;
+    flex-basis: 28vw;
 }
 
 .play-video video{
-    width: 68vw;
+    width: 67vw;
 }
 
+.videoList{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1vw;
+}
+
+.videoList img{
+    width: 11vw;
+}
+
+.videoList .smallThumbnail{
+    flex-basis: 11vw;
+}
+
+.videoList .videoInfo2{
+    flex-basis: 15vw;
+}
 /** MediaQuerys for tablets (800px - 1280px)*/
 
 @media (min-width:800px) and (max-width:1280px){
