@@ -183,10 +183,46 @@ nav{
     padding-bottom: 2vw;
 }
 
+/** Styles for the banner image */
 .bannerContainer img{
     width: 81vw;
     border-radius: 2vw;
 }
 
-/* */
+/** Styles for the videos sections */
+
+.videosContainer{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+    column-gap: 1vw;
+    grid-template-rows: 17vw;
+    margin-top: 1vw;
+}
+
+.videoCar .thumbnail{
+    width: 100%;
+    border-radius: 1vw;
+}
+
+.videoCar .flexNavBar{
+    align-items: start;
+    margin-top: 0.5vw;
+}
+
+.flexNavBar img{
+    width: 2.5vw;
+    border-radius: 2vw;
+}
+
+.videoInfo{
+    margin-left: 0.5vw;
+    color: #5a5a5a;
+    font-size: 0.8vw;
+}
+
+.videoInfo a{
+    color: black;
+    font-size: 1vw;
+    font-weight: bold;
+}
 
