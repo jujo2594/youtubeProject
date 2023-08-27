@@ -79,7 +79,7 @@ nav{
 /**  Sidebar Styles */
 
 .sideBar{
-    width: 15vw;
+    max-width: 15vw;
     height: 100vh;
     background-color: #fff;
     position: fixed;
@@ -87,6 +87,7 @@ nav{
     padding-left: 1.5vw;
     padding-top: 7vw;
 }
+
 /** Styles for the shortcuts section in the sidebar */
 .shortcutsIcons a{
     display: flex;
@@ -114,9 +115,9 @@ nav{
 
 .sideBar hr{
     border: 0;
-    height: 0.1vw;
-    width: 12vw;
-    background-image: linear-gradient(to right, rgba(0,0,0,0), #ccc, rgba(0,0,0,0) );
+    height: 0.02vw;
+    background: #ccc;
+    width: 11vw;
 }
 
 /** Styles for the subscribed channels */
@@ -139,4 +140,19 @@ nav{
     width: 2.1vw;
     border-radius: 50vw;
     shad
+}
+
+/** Styles when the sidebar is reduce, this class y created with javascript */
+.reduceSideBar{
+    max-width: 5vw;
+    transition: max-width .3s ease;
+}
+
+.reduceSideBar p, .reduceSideBar h3{
+    display: none;
+}
+
+.reduceSideBar hr{
+    width: 3vw;
+    margin-bottom: 1.5vw;
 }
