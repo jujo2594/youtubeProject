@@ -263,3 +263,65 @@ nav{
         font-size: 1.2vw;
     }
 }
+
+@media (max-width:799px){
+
+    .navSection1 .youtubeLogo{
+        width: 20vw;
+    }
+
+    .navSection2 .micIcon{
+        display: none;
+    }
+
+    .navSection2 .searchBox{
+        border-radius: 3vw;
+    }
+
+    .navSection2 .searchBox input{
+        width: 40vw;
+    }
+
+    .searchIcon{
+        display: none;
+    }
+
+    .navSection3 img{
+        display: none;
+    }
+
+    .navSection3 .userIcon{
+        display: block;
+        width: 7vw;
+        margin-right: 0;
+    }
+
+    .sideBar{
+        display: none;
+    }
+
+    .menu{
+        display: none;
+    }
+
+    .mainContent{
+        padding-left: 2vw;
+        padding-right: 2vw;
+    }
+    .bannerContainer img{
+        width: 96vw;
+    }
+
+    .profilePicture{
+        width: 6vw;
+        border-radius: 3vw;
+    }
+    .videoInfo{
+        font-size: 2.1vw;
+    }
+    
+    .videoInfo a{
+        font-size: 2.5vw;
+    }
+
+}
