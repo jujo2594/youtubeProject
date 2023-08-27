@@ -33,7 +33,7 @@ nav{
 }
 
 /** Styles for the menu-Icon and the YouTube logo */
-.navSection1 .menu{
+.menu{
     width: 2VW;
     margin-right: 2VW;
 }
@@ -111,8 +111,7 @@ nav{
     margin-right: 1vw;
 }
 
-
-.shortcutsIcons a:hover{
+.simdeMenu:hover{
     background-color: lightgray;
     width: 12vw;
     border-radius: 0.5vw;
@@ -146,12 +145,12 @@ nav{
     width: fit-content;
 }
 
-.subscribedChanels a:hover{
+/* .subscribedChanels a:hover{
     background-color: lightgray;
     width: 12vw;
     border-radius: 0.5vw;
     transition: color .3s ease, color .3s ease;
-}
+} */
 
 .subscribedChanels img{
     width: 2.1vw;
@@ -183,10 +182,18 @@ nav{
     padding-bottom: 2vw;
 }
 
+.bigContent{
+    padding-left: 7vw;
+}
+
 /** Styles for the banner image */
 .bannerContainer img{
     width: 81vw;
     border-radius: 2vw;
+}
+
+.largeBannerContainer img{
+    width: 90vw;
 }
 
 /** Styles for the videos sections */
@@ -209,7 +216,7 @@ nav{
     margin-top: 0.5vw;
 }
 
-.flexNavBar img{
+.profilePicture{
     width: 2.5vw;
     border-radius: 2vw;
 }
