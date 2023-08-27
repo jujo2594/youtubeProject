@@ -3,6 +3,7 @@
     padding: 0;
     font-family: 'poppins', sans-serif;
     box-sizing: border-box;
+    overflow-x: auto;
 }
 
 a{
@@ -159,6 +160,10 @@ nav{
 }
 
 /** Styles when the sidebar is reduce, this class y created with javascript */
+
+/* 
+!Revisar esta parte del codigo por error
+*/
 .reduceSideBar{
     max-width: 5vw;
     transition: max-width .3s ease;
@@ -231,6 +236,30 @@ nav{
     color: black;
     font-size: 1vw;
     font-weight: bold;
+}
+
+/* Styles for video landing page*/
+
+.videoPosition{
+    padding-left: 2vw;
+}
+
+.row{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.play-video{
+    flex-basis: 68vw;
+}
+
+.rigth-sidebar{
+    flex-basis: 30vw;
+}
+
+.play-video video{
+    width: 68vw;
 }
 
 /** MediaQuerys for tablets (800px - 1280px)*/
