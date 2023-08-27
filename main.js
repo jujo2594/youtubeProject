@@ -23,11 +23,11 @@ function hover(){
 menuIcon.addEventListener('click', ocultar);
 
 //*! It's not reomving the hover when the menu is reduced
-shortcuts.addEventListener('mouseenter', hover)  
+// shortcuts.addEventListener('mouseenter', hover)  
 
 /* APIS CODE TO GET A RESPONSE FROM THE CreativeCode, Youtube Channel */
 
-const url = 'https://youtube138.p.rapidapi.com/search/?q=CreativeCode&hl=en&gl=US';
+const url = 'https://youtube138.p.rapidapi.com/channel/search/?id=UC8fkwsjcI_MhralEX1g4OBw&q=CreativeCode&hl=en&gl=US';
 const options = {
 	method: 'GET',
 	headers: {
@@ -36,10 +36,8 @@ const options = {
 	}
 };
 
-try {
-	const response = await fetch(url, options);
-	const result = await response.text();
-	console.log(result);
-} catch (error) {
-	console.error(error);
+const obtenerYouTube = async() =>{
+    let petition = await fetch(url,options);
+    let response = await petition.json();
+    console.log (response);
 }
