@@ -333,6 +333,14 @@ nav{
 .downloads{
     margin-right: 1.2vw;
 }
+
+.play-video hr{
+    border: 0;
+    height: 0.1vw;
+    background: #ccc;
+    margin: 1vw 1vw;
+}
+
 /** MediaQuerys for tablets (800px - 1280px)*/
 
 @media (min-width:800px) and (max-width:1280px){
