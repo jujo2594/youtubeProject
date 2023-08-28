@@ -1,6 +1,6 @@
 /* APIS CODE TO GET A RESPONSE FROM THE CreativeCode, Youtube Channel. I download the '.json' object cos I already finish the allow number of calls  */
 
-const banner = "banner";
+const banner = "js/banner";
 
 const obtenerBanner = async() =>{
 	try{
@@ -22,7 +22,7 @@ obtenerBanner();
 
 /* Using the informacion of Channel Videos from the website, I'll insert the videos visualizations */
 
-const thumbnailsInfo = "creativeCodeVideo"
+const thumbnailsInfo = "js/creativeCodeVideo"
 
 const ObtenerVideos = async() =>{
 	try{
