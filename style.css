@@ -254,7 +254,7 @@ nav{
 }
 
 .rigth-sidebar{
-    flex-basis: 28vw;
+    flex-basis: 26vw;
 }
 
 .play-video video{
@@ -268,16 +268,28 @@ nav{
 }
 
 .videoList img{
-    width: 11vw;
+    width: 10vw;
+    border-radius: 0.8vw;
 }
 
 .videoList .smallThumbnail{
-    flex-basis: 11vw;
+    flex-basis: 10vw;
 }
 
 .videoList .videoInfo2{
     flex-basis: 15vw;
 }
+
+.videoInfo2 a{
+    font-size: 1vw;
+    font-weight: bold;
+}
+
+.videoList p{
+    font-size: 0.9vw;
+    color: #5a5a5a;
+}
+
 /** MediaQuerys for tablets (800px - 1280px)*/
 
 @media (min-width:800px) and (max-width:1280px){
