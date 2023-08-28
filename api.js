@@ -1,17 +1,10 @@
-/* APIS CODE TO GET A RESPONSE FROM THE CreativeCode, Youtube Channel */
+/* APIS CODE TO GET A RESPONSE FROM THE CreativeCode, Youtube Channel. I download the '.json' object cos I already finish the allow number of calls  */
 
-const url = 'https://youtube138.p.rapidapi.com/channel/details/?id=UC8fkwsjcI_MhralEX1g4OBw&hl=en&gl=US';
-const options = {
-	method: 'GET',
-	headers: {
-		'X-RapidAPI-Key': '158275f0c7msh3e1e4e8e68b9289p19689fjsn7a974cbcd4b3',
-		'X-RapidAPI-Host': 'youtube138.p.rapidapi.com'
-	}
-};
+const banner = "banner";
 
 const obtenerBanner = async() =>{
 	try{
-		let petition = await fetch(url,options);
+		let petition = await fetch(`${banner}.json`);
 		let response = await petition.json();
 		console.log(response);
 		let creativeCodeBanner = response.banner.desktop[0].url;
@@ -21,8 +14,40 @@ const obtenerBanner = async() =>{
 		`)
 	}
 	catch(error){
-		console.error('Ocurrio un error', error);
+		console.error('System Error', error);
 	}
 }
 
 obtenerBanner();
+
+/* Using the informacion of Channel Videos from the website, I'll insert the videos visualizations */
+
+const thumbnailsInfo = "creativeCodeVideo"
+
+const ObtenerVideos = async() =>{
+	try{
+		let petition = await fetch(`${thumbnailsInfo}.json`);
+		let response = await petition.json();
+		console.log(response);
+		let selection = document.querySelector('.videosContainer');
+			selection.insertAdjacentHTML('beforeend', /* HTML */`
+				${response.contents.map((value)=> /* HTML */ `
+				<div class="videoCar">
+					<a href="index2.html"><img class="thumbnail" src="${value.video.thumbnails[2].url}" alt="thumbnail1"></a>
+					<div class="flexNavBar">
+						<a href=""><img class="profilePicture" src="images/Jack.png" alt="channel1"></a>
+						<div class="videoInfo">
+							<a href="index2.html">${value.video.title}</a>
+							<p>CreativeCode</p>
+							<p>${value.video.stats.views} &bull; ${value.video.publishedTimeText}</p>
+						</div>
+					</div>
+				</div>
+				`).join(" ")};
+			`);
+	}catch(error){
+		console.error('System Error', error)
+	}
+}
+
+ObtenerVideos();
