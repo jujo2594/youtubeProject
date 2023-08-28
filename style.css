@@ -290,6 +290,49 @@ nav{
     color: #5a5a5a;
 }
 
+/** Styles for the tags, labels and information under the video player */
+
+.play-video h3{
+    margin-top: 0.5vw;
+    font-size: 1.2vw;
+    font-weight: bold;
+}
+
+.playVideoInfo{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    font-size: 1vw;
+    color: #5a5a5a;
+}
+
+.playVideoInfo a img{
+    width: 1.5vw;
+    margin-right: 0.5vw;
+}
+
+.playVideoInfo a{
+    width: fit-content;
+    font-weight: bold;
+    background-color: rgb(222, 221, 221);
+    height: 2vw;
+    border: 1px solid #5a5a5a;
+    border-radius: 0.5vw;
+    display: inline-flex;
+    align-items: center;
+    margin-left: 0.5vw;
+    padding: 0 0.2vw;
+}
+
+.playVideoInfo i{
+    font-size: 1.6vw;
+    color: rgb(128, 123, 123);
+}
+
+.downloads{
+    margin-right: 1.2vw;
+}
 /** MediaQuerys for tablets (800px - 1280px)*/
 
 @media (min-width:800px) and (max-width:1280px){
