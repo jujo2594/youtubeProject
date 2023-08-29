@@ -6,7 +6,6 @@ const getBanner = async() =>{
 	try{
 		let petition = await fetch(`${banner}.json`);
 		let response = await petition.json();
-		console.log(response);
 		let creativeCodeBanner = response.banner.desktop[0].url;
 		let selection = document.querySelector('.bannerContainer');
 		selection.insertAdjacentHTML("beforeend", /* HTML*/ `
@@ -18,7 +17,18 @@ const getBanner = async() =>{
 	}
 }
 
-getBanner();
+// getBanner();
+
+let thumbnails;
+const addThumbnailsEvent = ()=>{
+	thumbnails.forEach(source=>{
+		source.addEventListener('click',()=>{
+			const thumbnailSrc = source.getAttribute('src');
+			console.log(thumbnailSrc);
+			window.location.href = `index2.html?thumbnail=${encodeURIComponent(thumbnailSrc)}`	
+		});
+	});
+}
 
 /* Using the informacion of Channel Videos from the website, I'll insert the videos visualizations */
 
@@ -28,7 +38,6 @@ const getVideos = async() =>{
 	try{
 		let petition = await fetch(`${thumbnailsInfo}.json`);
 		let response = await petition.json();
-		console.log(response);
 		let selection = document.querySelector('.videosContainer');
 			selection.insertAdjacentHTML('beforeend', /* HTML */`
 				${response.contents.map((value)=> /* HTML */ `
@@ -45,29 +54,29 @@ const getVideos = async() =>{
 				</div>
 				`).join(" ")};
 			`);
+			thumbnails = document.querySelectorAll('thumbnail');
+			addThumbnailsEvent();
 	}catch(error){
 		console.error('System Error', error)
 	}
 }
 
-getVideos();
-
-/* Function that send to the correct video if I click on the thumbnail, and add the videos informacion on the description.*/
-
-
-const putVideos = async()=>{
-	try{
-		let petition = await fetch(`${thumbnailsInfo}.json`);
-		let petition2 = await fetch(`${banner}.json`)
-		let response = await petition.json();
-		let response2 = await petition2.json();
-		let selection = document.querySelector('.play-video');
-		selection.insertAdjacentHTML('beforeend',/* HTML */`
-			${response.contents.map((value)=>/* HTML */`
-			<iframe width="1000" height="600" src="https://www.youtube.com/embed/${}" title="M I L E S D A V I S - Kind Of Blue - Full Album" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-			<h3>Web Api NetCore Part22</h3>
+const bringVideo = async()=>{
+	let petition = await fetch(`${thumbnailsInfo}.json`);
+	let response = await petition.json();
+	let petition2 = await fetch(`${banner}.json`)
+	let response2 = await petition2.json();
+	let key = response.contents.video.videoId;
+	const urlSearch = window.location.search;
+	let urlParams = new URLSearchParams(urlSearch);
+	let thumbnailUrl = urlParams.get('thumbnail');
+	if(thumbnailUrl.includes(key)){
+		let selection = document.querySelector('.videosContainer');
+			selection.insertAdjacentHTML('beforeend', /* HTML */`
+			<iframe width="1000" height="600" src="https://www.youtube.com/embed/${key}" title="M I L E S D A V I S - Kind Of Blue - Full Album" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+			<h3></h3>
 			<div class="playVideoInfo">
-				<p>145k &bull; 3 weeks ago</p>
+				<p>${response.contents.video.title} &bull; ${response.contents.video.publishedTimeText}</p>
 				<div>
 					<a href=""><img src="images/like.png" alt="likeIcon">26 k</a>
 					<a href=""><img src="images/dislike.png" alt="likeIcon"></a>
@@ -76,11 +85,47 @@ const putVideos = async()=>{
 					<a class="downloads" ><i class='bx bx-download'></i>Download</a>
 				</div>
 			</div>
-			`)}
-		
-		`)
-	}catch(error){
-		console.error('System Error', error);
+			<hr>
+                <div class="channelInfo">
+                    <img src="./images/Jack.png" alt="channelImage">
+                    <div>
+                        <p>${response2.title}</p>
+                        <span>${response2.subscribersText}</span>
+                        <button type="button">Subscribe</button>
+                    </div>
+                </div>
+			`)
+	}else{
+		console.log('No se encontró ninguna URL de miniatura en los parámetros de la URL.');
 	}
-	
 }
+
+document.addEventListener('DOMContentLoaded', () => {
+	// Llama a la función para obtener el banner
+	
+	
+	// Verifica en qué página estás y ejecuta la lógica correspondiente
+	if (window.location.pathname === '/index.html') {
+	  // Llama a la función para agregar el evento de clic a las miniaturas en index.html
+		getBanner();
+		getVideos();
+	} else if (window.location.pathname === '/index2.html') {
+	  // Llama a la función para manejar la lógica en index2.html
+		bringVideo();
+	}
+});
+/* Function that send to the correct video if I click on the thumbnail, and add the videos informacion on the description.*/
+
+
+// const putVideos = async()=>{
+// 	try{
+// 		let petition = await fetch(`${thumbnailsInfo}.json`);
+// 		let petition2 = await fetch(`${banner}.json`)
+// 		let response = await petition.json();
+// 		let response2 = await petition2.json();
+// 	}catch(error){
+// 		console.error('System Error', error);
+// 	}
+// }
+
+// putVideos();
