@@ -30,14 +30,15 @@ const bringVideo = async()=>{
 		const urlString = window.location.search;
 		console.log(urlString);
 		let urlId = urlString.slice(-11);
-		if(response.contents.find(content => content.video.videoId === urlId)){
-			let selection = document.querySelector('.videosContainer');
+		let urlMatch = response.contents.find(content => content.video.videoId === urlId); 
+		if(urlMatch){
+			let selection = document.querySelector('.play-video');
 			selection.insertAdjacentHTML('beforeend', /* HTML */`
 				<div class="play-video">
 				<iframe width="1000" height="600" src="https://www.youtube.com/embed/${urlId}" title="M I L E S D A V I S - Kind Of Blue - Full Album" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-				<h3>${response.contents.video.title}</h3>
+				<h3>${urlMatch.video.title}</h3>
 				<div class="playVideoInfo">
-					<p>${response.contents.video.stats.views} &bull; ${response.contents.video.publishedTimeText}</p>
+					<p>${urlMatch.video.stats.views} &bull; ${urlMatch.video.publishedTimeText}</p>
 					<div>
 						<a href=""><img src="images/like.png" alt="likeIcon">26 k</a>
 						<a href=""><img src="images/dislike.png" alt="likeIcon"></a>
@@ -48,8 +49,7 @@ const bringVideo = async()=>{
 				</div>
 				<hr>
 			`);
-			let selection2 = document.querySelector('.rigth-sidebar');
-			selection2.insertAdjacentHTML('beforeend',/* HTML */` 
+			selection.insertAdjacentHTML('beforeend',/* HTML */` 
 				<div class="channelInfo">
 				<img src="./images/Jack.png" alt="channelImage">
 					<div>
@@ -59,6 +59,7 @@ const bringVideo = async()=>{
 					</div>
 				</div>
 			`);
+			
 		}else{
 			console.log('No se encontro ningun video con el ID correspondiente');
 		}
@@ -66,3 +67,5 @@ const bringVideo = async()=>{
 		console.error('System Error',error)
 	}
 }
+
+bringVideo();
