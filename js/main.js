@@ -5,9 +5,6 @@ let sideBar = document.querySelector('.sideBar');
 let largeContainer = document.querySelector('.mainContent');
 let largeBanner = document.querySelector('.bannerContainer');
 
-//*! It's not reomving the hover when the menu is reduced
-// let shortcuts = document.querySelectorAll('.simdeMenu');
-
 
 function ocultar(){
     sideBar.classList.toggle("reduceSideBar");
@@ -15,16 +12,10 @@ function ocultar(){
     largeBanner.classList.toggle("largeBannerContainer");
 }
 
-//*! It's not reomving the hover when the menu is reduced
-// function hover(){
-//     shortcuts.style.transition = "none";
-// }
+menuIcon.addEventListener('click', ocultar);
 
-// menuIcon.addEventListener('click', ocultar);
 
-//*! It's not reomving the hover when the menu is reduced
-// shortcuts.addEventListener('mouseenter', hover)  
-
+/* This function allows to get the banner from 'CreativeCode' Channel */
 const banner = "js/banner";
 
 const getBanner = async() =>{
@@ -41,8 +32,9 @@ const getBanner = async() =>{
 		console.error('System Error', error);
 	}
 }
-
 getBanner();
+
+/* This function allows to get the videos informacion from 'CreativeCode' Youtube Channel */
 
 const thumbnailsInfo = "js/creativeCodeVideo"
 
@@ -56,7 +48,7 @@ const getVideos = async() =>{
 				<div class="videoCar">
 					<a href="index2.html?videoId=${value.video.videoId}"><img class="thumbnail" src="${value.video.thumbnails[2].url}" alt="thumbnail1"></a>
 					<div class="flexNavBar">
-						<a href=""><img class="profilePicture" src="images/Jack.png" alt="CreativeCode"></a>
+						<a href=""><img class="profilePicture" src="images/Jack.png" alt=""></a>
 						<div class="videoInfo">
 							<a href="index2.html">${value.video.title}</a>
 							<p>CreativeCode</p>

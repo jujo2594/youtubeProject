@@ -111,12 +111,6 @@ nav{
     margin-right: 1vw;
 }
 
-.simdeMenu:hover{
-    background-color: lightgray;
-    width: 12vw;
-    border-radius: 0.5vw;
-    transition: color .3s ease, color .3s ease;
-}
 
 .sideBar hr{
     border: 0;
@@ -145,24 +139,14 @@ nav{
     width: fit-content;
 }
 
-/* .subscribedChanels a:hover{
-    background-color: lightgray;
-    width: 12vw;
-    border-radius: 0.5vw;
-    transition: color .3s ease, color .3s ease;
-} */
-
 .subscribedChanels img{
     width: 2.1vw;
     border-radius: 50vw;
-    shad
 }
 
 /** Styles when the sidebar is reduce, this class y created with javascript */
 
-/* 
-!Revisar esta parte del codigo por error
-*/
+
 .reduceSideBar{
     max-width: 5vw;
     transition: max-width .3s ease;
@@ -334,7 +318,7 @@ nav{
     margin-right: 1.2vw;
 }
 
-.play-video hr{
+.play-video hr, .channelInfo hr{
     border: 0;
     height: 0.1vw;
     background: #ccc;
@@ -350,6 +334,27 @@ nav{
 .channelInfo div{
     flex: 1;
 }
+
+.channelInfo img{
+    border-radius: 4vw;
+    margin-right: 1vw;
+}
+
+.channelInfo button{
+    margin-left: 8vw;
+    width: 10vw;
+    height: 2vw;
+    border-radius: 1vw;
+    font-weight: bold;
+    font-size: 1.2vw;
+}
+
+
+.channelInfo p{
+    font-size: 1.5vw;
+    font-weight: bold;
+}
+
 
 /** MediaQuerys for tablets (800px - 1280px)*/
 
