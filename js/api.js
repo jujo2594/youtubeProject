@@ -33,13 +33,14 @@ const bringVideo = async()=>{
 			`);
 			selection.insertAdjacentHTML('beforeend',/* HTML */` 
 				<div class="channelInfo">
-				<img src="./images/Jack.png" alt="channelImage">
+				<img src="${response2.avatar[1].url}" alt="channelImage">
 					<div>
 						<p>${response2.title}</p>
 						<span>${response2.stats.subscribersText}</span>
 						<button type="button">Subscribe</button>
 					</div>
 				</div>
+				<hr>
 			`);
 			let selection2 = document.querySelector('.rigth-sidebar');
 			selection2.insertAdjacentHTML('beforeend',/* HTML */ `
