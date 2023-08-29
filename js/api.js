@@ -1,23 +1,5 @@
 /* APIS CODE TO GET A RESPONSE FROM THE CreativeCode, Youtube Channel. I download the '.json' object cos I already finish the allow number of calls  */
 
-
-
-// getBanner();
-
-// let thumbnails;
-// const addThumbnailsEvent = ()=>{
-// 	thumbnails.forEach(source=>{
-// 		source.addEventListener('click',()=>{
-// 			const thumbnailSrc = source.getAttribute('src');
-// 			console.log(thumbnailSrc);
-// 			/* Return the url hr */
-// 			window.location.href = `index2.html?thumbnail=${encodeURIComponent(thumbnailSrc)}`	
-// 		});
-// 	});
-// }
-
-/* Using the informacion of Channel Videos from the website, I'll insert the videos visualizations */
-
 const thumbnailsInfo = "js/creativeCodeVideo";
 const banner = "js/banner";
 
@@ -44,7 +26,7 @@ const bringVideo = async()=>{
 						<a href=""><img src="images/dislike.png" alt="likeIcon"></a>
 						<a href=""><img src="images/share.png" alt="likeIcon">Share</a>
 						<a href=""><img src="images/save.png" alt="likeIcon">Save</a>
-						<a class="downloads" ><i class='bx bx-download'></i>Download</a>
+						<a href="" class="downloads" ><i class='bx bx-download'></i>Download</a>
 					</div>
 				</div>
 				<hr>
@@ -59,7 +41,19 @@ const bringVideo = async()=>{
 					</div>
 				</div>
 			`);
-			
+			let selection2 = document.querySelector('.rigth-sidebar');
+			selection2.insertAdjacentHTML('beforeend',/* HTML */ `
+			${response.contents.map((value)=> /* HTML */ ` 
+				<div class="videoList">
+					<a class="smallThumbnail" href="index2.html?videoId=${value.video.videoId}"><img src="${value.video.thumbnails[0].url}" alt="videoRecomendations"></a>
+					<div class="videoInfo2">
+						<a href=""><p>${value.video.title}</p></a>
+						<p>CreativeCode</p>
+						<p>${value.video.stats.views} &bull; ${value.video.publishedTimeText}</p>
+					</div>
+				</div>
+			`)}
+			`)
 		}else{
 			console.log('No se encontro ningun video con el ID correspondiente');
 		}
