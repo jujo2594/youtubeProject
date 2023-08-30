@@ -3,11 +3,32 @@
 const thumbnailsInfo = "js/creativeCodeVideo";
 const banner = "js/banner";
 
+const url = 'https://youtube138.p.rapidapi.com/channel/videos/?id=UC8fkwsjcI_MhralEX1g4OBw&hl=en&gl=US';
+const options = {
+	method: 'GET',
+	headers: {
+		'X-RapidAPI-Key': '918e099fd5msh92f3d9782dba764p1f0484jsn2dd716acaead',
+		'X-RapidAPI-Host': 'youtube138.p.rapidapi.com'
+	}
+};
+
+const url2 = 'https://youtube138.p.rapidapi.com/channel/details/?id=UC8fkwsjcI_MhralEX1g4OBw&hl=en&gl=US';
+const options2 = {
+	method: 'GET',
+	headers: {
+		'X-RapidAPI-Key': '918e099fd5msh92f3d9782dba764p1f0484jsn2dd716acaead',
+		'X-RapidAPI-Host': 'youtube138.p.rapidapi.com'
+	}
+};
+
+
 const bringVideo = async()=>{
 	try{
-		let petition = await fetch(`${thumbnailsInfo}.json`);
+
+		let petition = await fetch(url,options);
 		let response = await petition.json();
-		let petition2 = await fetch(`${banner}.json`)
+		console.log(response);
+		let petition2 = await fetch(url2,options2)
 		let response2 = await petition2.json();
 		const urlString = window.location.search;
 		console.log(urlString);
@@ -65,9 +86,9 @@ const bringVideo = async()=>{
 
 bringVideo();
 
-import { searchNavBar } from "./searchFunction";
-document.querySelector('#chartSearch').addEventListener("change", (e)=>{
-    searchList(e.target.value)
+import { searchNavBar } from "./searchFunction.js";
+document.querySelector('#chartSearch').addEventListener("input", (e)=>{
+    searchNavBar(e.target.value)
 });
 
 searchNavBar();
