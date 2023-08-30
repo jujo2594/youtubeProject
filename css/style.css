@@ -43,6 +43,13 @@ nav{
 }
 
 /** Styles for the search bar, search icon and the mic Icon */
+
+.navSection2 {
+    display: flex;
+    flex-direction: column;
+
+}
+
 .navSection2 .micIcon{
     width: 1.3vw;
     margin-left: 0.7vw;
@@ -67,15 +74,14 @@ nav{
 .searchQuery{
     display: flex;
     flex-direction: column;
-    width: 25vw;
     overflow: visible;
 }
 
 #active{
-    margin-top: 1vw;
-    width: 25vw;
+    margin-top: 0.5vw;
+    width: 30vw;
     padding-left: 3vw;
-    padding-top: 3vw;
+    padding-top: 0.5vw;
     position: absolute;
     z-index: 5;
     background: #323232;
