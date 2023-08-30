@@ -45,6 +45,8 @@ nav{
 /** Styles for the search bar, search icon and the mic Icon */
 .navSection2 .micIcon{
     width: 1.3vw;
+    margin-left: 0.7vw;
+    margin-right: 0.2vw;
 }
 
 .navSection2 .searchBox{
@@ -59,6 +61,30 @@ nav{
     border: 0;
     outline: 0;
     background-color: transparent;
+}
+
+/* Styles for slide menu search */
+.searchQuery{
+    display: flex;
+    flex-direction: column;
+    width: 25vw;
+    overflow: visible;
+}
+
+#active{
+    margin-top: 1vw;
+    width: 25vw;
+    padding-left: 3vw;
+    padding-top: 3vw;
+    position: absolute;
+    z-index: 5;
+    background: #323232;
+    border-radius: 1vw;
+    overflow-y: auto;
+}
+
+.searchList{
+    font-size: 0.7vw;
 }
 
 .navSection2 .searchBox img{
