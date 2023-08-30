@@ -65,9 +65,9 @@ const getVideos = async() =>{
 getVideos();
 
 
-import { searchNavBar } from "./searchFunction";
-document.querySelector('#chartSearch').addEventListener("change", (e)=>{
-    searchList(e.target.value)
+import { searchNavBar } from "./searchFunction.js";
+document.querySelector('#chartSearch').addEventListener("input", (e)=>{
+    searchNavBar(e.target.value)
 });
 
 searchNavBar();
