@@ -52,6 +52,9 @@ const getBanner = async() =>{
 getBanner();
 ```
 
+#### LAST COMMIT():
+
+Durante la actividad del dìa de hoy de modificar los commits a 'conventional commit', modifique la fecha del ultimo commit llamado 'feat: ✨ Adding API URL and adding a README.md', no se presentaron modificaciones en el codigo original del proyecto, esto paso debido por 
 
 
 #### .getVideos()
